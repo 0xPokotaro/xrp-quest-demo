@@ -1,11 +1,15 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+let ai: GoogleGenAI | null = null;
+function getClient() {
+  if (!ai) ai = new GoogleGenAI({ apiKey: process.env.API_KEY ?? "" });
+  return ai;
+}
 
 export const getConciergeInsight = async (userName: string, balances: { xrp: number, rlusd: number }) => {
   try {
-    const response = await ai.models.generateContent({
+    const response = await getClient().models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: `Context: XRP Tokyo 2026 Conference.
 User: ${userName}. 

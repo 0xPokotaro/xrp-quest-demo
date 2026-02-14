@@ -12,7 +12,7 @@ export interface Task {
   rewardType: 'XRP' | 'RLUSD';
   rewardAmount: number;
   status: TaskStatus;
-  category: 'Booth' | 'Session' | 'Social';
+  category: 'Booth' | 'Session' | 'Social' | 'DeFi' | 'NFT';
   location?: string;
 }
 
