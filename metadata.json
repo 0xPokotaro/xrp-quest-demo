@@ -1,0 +1,7 @@
+{
+  "name": "XRP Tokyo 2026 Companion",
+  "description": "Exclusive event companion app for XRP Tokyo 2026, featuring wallet integration, task management, and RLUSD/XRP rewards.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
